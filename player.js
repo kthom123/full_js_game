@@ -1,4 +1,4 @@
-class Player {
+export class Player {
   constructor(game){
     this.game = game;
     this.width = 100;
@@ -9,7 +9,7 @@ class Player {
   update(){
 
   }
-  draw(){
-
+  draw(context){
+    context.fillRect(this.x, this.y, this.width, this.height);
   }
 }
