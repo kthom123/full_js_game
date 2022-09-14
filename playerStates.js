@@ -41,3 +41,19 @@ export class Running extends State {
     }
   }
 }
+
+export class Jumping extends State {
+  constructor(player){
+    super('JUMPING');
+    this.player = player;
+  }
+  enter(){
+    if (this.player.onGround()) this.player.vy -= 30;
+    this.player.frameY = 1;
+  }
+  handleInput(input){
+    if (this.player.vy > this.player.weight){
+      this.player.setState(states.FALLING);
+    }
+  }
+}
