@@ -2,6 +2,7 @@ const states = {
   SITTING: 0,
   RUNNING: 1,
   JUMPING: 2,
+  FALLING: 3,
 }
 
 class State {
@@ -38,6 +39,8 @@ export class Running extends State {
   handleInput(input){
     if (input.includes('ArrowDown')){
       this.player.setState(states.SITTING);
+    } else if (input.includes('ArrowUp')){
+      this.player.setState(states.JUMPING);
     }
   }
 }
