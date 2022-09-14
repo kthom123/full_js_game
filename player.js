@@ -10,9 +10,11 @@ export class Player {
     this.vy = 0;
     this.weight = 1;
     this.image = document.getElementById('player');
+    this.frameX = 0;
+    this.frameY = 0;
     this.speed = 0;
     this.maxSpeed = 10;
-    this.states = [];
+    this.states = [new Sitting(this)];
     this.currentState = this.states[0];
     this.currentState.enter();
   }
