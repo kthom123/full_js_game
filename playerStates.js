@@ -60,3 +60,18 @@ export class Jumping extends State {
     }
   }
 }
+
+export class Falling extends State {
+  constructor(player){
+    super('FALLING');
+    this.player = player;
+  }
+  enter(){
+    this.player.frameY = 2;
+  }
+  handleInput(input){
+    if (this.player.onGround()){
+      this.player.setState(states.RUNNING);
+    }
+  }
+}
