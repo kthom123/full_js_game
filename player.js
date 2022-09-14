@@ -19,6 +19,7 @@ export class Player {
     this.currentState.enter();
   }
   update(input){
+    this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
     if (input.includes('ArrowRight')) this.speed = this.maxSpeed;
@@ -38,5 +39,9 @@ export class Player {
   }
   onGround(){
     return this.y >= this.game.height - this.height;
+  }
+  setState(state){
+    this.currentState = this.states[state];
+    this.currentState.enter();
   }
 }
