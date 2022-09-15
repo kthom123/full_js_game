@@ -33,8 +33,8 @@ export class Player {
     if (!this.onGround()) this.vy += this.weight;
     else this.vy = 0;
     // sprite animation
-    if (this.frameX < this.maxFrame) this.frameX++;
-    else this.frameX = 0;
+    // if (this.frameX < this.maxFrame) this.frameX++;
+    // else this.frameX = 0;
 
   }
   draw(context){
