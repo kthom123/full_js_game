@@ -50,7 +50,7 @@ export class Player {
       this.width, this.height, this.x, this.y, this. width, this.height);
   }
   onGround(){
-    return this.y >= this.game.height - this.height;
+    return this.y >= this.game.height - this.height - this.game.groundMargin;
   }
   setState(state){
     this.currentState = this.states[state];
