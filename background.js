@@ -34,7 +34,7 @@ export class Background {
     this.layer4 = new Layer(this.game, this.width, this.height, 0.8, this.layer4image);
     this.layer5 = new Layer(this.game, this.width, this.height, 1, this.layer5image);
     this.backgroundLayers = [this.layer1, this.layer2, this.layer3, this.layer4, this.layer5];
-  }
+  } // stopped at 8:05:19
   update(){
     this.backgroundLayers.forEach(layer => {
       layer.update();
