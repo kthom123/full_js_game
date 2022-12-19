@@ -27,6 +27,15 @@ window.addEventListener('load', function(){
       this.background.update();
       this.player.update(this.input.keys, deltaTime);
       // handleEnemies
+      if (this.enemyTimer > this.enemyInterval){
+        this.addEnemy();
+        this.enemyTimer = 0;
+      } else {
+        this.enemyTimer += deltaTime;
+      }
+      this.enemies.forEach(enemy => {
+          enemy.update(deltaTime);
+      })
     }
     draw(context){
       this.background.draw(context);
