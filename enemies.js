@@ -80,6 +80,7 @@ export class ClimbingEnemy extends Enemy {
     }
     update(deltaTime){
       super.update(deltaTime);
+      if (this.y > this.game.height - this.height - this.game.groundMargin) this.speedY *= -1;
     }
     draw(context){
       super.draw(context);
