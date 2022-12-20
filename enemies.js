@@ -5,7 +5,7 @@ class Enemy {
     this.fps = 20;
     this.frameInterval = 1000/this.fps;
     this.frameTimer = 0;
-    this.markedForDeletion = false; //paused at 8:20:44
+    this.markedForDeletion = false;
   }
   update(deltaTime){
     // movement
