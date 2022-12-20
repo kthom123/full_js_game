@@ -52,6 +52,7 @@ export class FlyingEnemy extends Enemy {
 
 export class GroundEnemy extends Enemy {
     constructor(game){
+      super();
       this.game = game;
       this.width = 60;
       this.height = 87;
@@ -65,5 +66,22 @@ export class GroundEnemy extends Enemy {
 }
 
 export class ClimbingEnemy extends Enemy {
-
+    constructor(game){
+      super();
+      this.game = game;
+      this.width = 120;
+      this.height = 144;
+      this.x = this.game.width;
+      this.y = Math.random() * this.game.height * 0.5;
+      this.image = document.getElementById('enemy_spider_big');
+      this.speedX = 0;
+      this.speedY = Math.random() > 0.5 ? 1 : -1;
+      this.maxFrame = 5;
+    }
+    update(deltaTime){
+      super.update(deltaTime);
+    }
+    draw(context){
+      super.draw(context);
+    }
 }
