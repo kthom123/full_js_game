@@ -89,5 +89,5 @@ export class ClimbingEnemy extends Enemy {
       context.moveTo(this.x + this.width/2,0);
       context.lineTo(this.x + this.width/2, this.y + 50);
       context.stroke();
-    } // paused at 8:32:20 ------------------------------------
+    }
 }
