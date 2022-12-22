@@ -66,7 +66,8 @@ export class Player {
         enemy.y < this.y + this.height &&
         enemy.y + enemy.height > this.y
       ){
-        //collision detected
+        enemy.markedForDeletion = true;
+        this.game.score++;
       } else {
         //no collision
       }
