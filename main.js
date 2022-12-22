@@ -47,7 +47,8 @@ window.addEventListener('load', function(){
         this.player.draw(context);
         this.enemies.forEach(enemy => {
           enemy.draw(context);
-      });
+        });
+        this.UI.draw(context);
     }
     addEnemy(){
       if (this.speed > 0 && Math.random() < 0.5) this.enemies.push(new GroundEnemy(this));
