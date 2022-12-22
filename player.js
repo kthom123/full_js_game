@@ -23,6 +23,7 @@ export class Player {
     this.currentState.enter();
   }
   update(input, deltaTime){
+    this.checkCollision()
     this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
