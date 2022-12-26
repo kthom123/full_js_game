@@ -36,22 +36,21 @@ export class Sitting extends State {
 }
 
 export class Running extends State {
-  constructor(player){
-    super('RUNNING');
-    this.player = player;
+  constructor(game){
+    super('RUNNING', game);
   }
   enter(){
-    this.player.frameX = 0;
-    this.player.maxFrame = 6;
-    this.player.frameY = 3;
+    this.game.player.frameX = 0;
+    this.game.player.maxFrame = 6;
+    this.game.player.frameY = 3;
   }
   handleInput(input){
     if (input.includes('ArrowDown')){
-      this.player.setState(states.SITTING, 0);
+      this.game.player.setState(states.SITTING, 0);
     } else if (input.includes('ArrowUp')){
-      this.player.setState(states.JUMPING, 1);
+      this.game.player.setState(states.JUMPING, 1);
     } else if (input.includes('Enter')){
-      this.player.setState(states.ROLLING, 2);
+      this.game.player.setState(states.ROLLING, 2);
     }
   }
 }
