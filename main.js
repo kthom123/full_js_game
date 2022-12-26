@@ -22,10 +22,13 @@ window.addEventListener('load', function(){
       this.input = new InputHandler(this);
       this.UI = new UI(this);
       this.enemies = [];
+      this.particles = [];
       this.enemyTimer = 0;
       this.enemyInterval = 1000;
       this.debug = true;
       this.score = 0;
+      this.player.currentState = this.player.states[0];
+      this.player.currentState.enter();
     }
     update(deltaTime){
         this.background.update();
@@ -59,7 +62,6 @@ window.addEventListener('load', function(){
   }
 
   const game = new Game(canvas.width, canvas.height);
-  console.log(game);
   let lastTime = 0;
 
   function animate(timeStamp){
