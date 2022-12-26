@@ -45,7 +45,8 @@ export class Running extends State {
     this.game.player.frameY = 3;
   }
   handleInput(input){
-    this.game.particles.push(new Dust(this.game, this.game.player.x, this.game.player.y));
+    this.game.particles.push(new Dust(this.game, this.game.player.x + this.game.player.width
+      * 0.6, this.game.player.y + this.game.player.height));
     if (input.includes('ArrowDown')){
       this.game.player.setState(states.SITTING, 0);
     } else if (input.includes('ArrowUp')){
@@ -53,7 +54,7 @@ export class Running extends State {
     } else if (input.includes('Enter')){
       this.game.player.setState(states.ROLLING, 2);
     }
-  }
+  } // paused at 8:54:13
 }
 
 export class Jumping extends State {
@@ -93,7 +94,7 @@ export class Falling extends State {
 
 export class Rolling extends State {
   constructor(game){
-    super('ROLLING');
+    super('ROLLING', game);
   }
   enter(){
     this.game.player.frameX = 0;
