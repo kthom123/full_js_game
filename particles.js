@@ -34,5 +34,13 @@ export class Splash extends Particle {
 }
 
 export class Fire extends Particle {
-
+  constructor(game, x, y){
+      super(game);
+      this.image = document.getElementById('fire');
+      this.size = Math.random() * 100 + 50;
+      this.x = x;
+      this.y = y;
+      this.speedX = 1;
+      this.speedY = 1;
+  }
 }
