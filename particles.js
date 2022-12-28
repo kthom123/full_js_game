@@ -43,4 +43,10 @@ export class Fire extends Particle {
       this.speedX = 1;
       this.speedY = 1;
   }
+  update(){
+    super.update();
+  }
+  draw(context){
+    context.drawImage(this.image, this.x, this.y, this.size, this.size);
+  }
 }
