@@ -129,6 +129,7 @@ export class Diving extends State {
     this.game.player.frameX = 0;
     this.game.player.maxFrame = 6;
     this.game.player.frameY = 6;
+    this.game.player.vy = 15;
   }
   handleInput(input){
     this.game.particles.unshift(new Fire(this.game, this.game.player.x + this.game.player.width
@@ -138,5 +139,5 @@ export class Diving extends State {
     } else if (input.includes('Enter') && this.game.player.onGround()){
       this.game.player.setState(states.ROLLING, 2);
     }
-  } // paused at 9:05:11
+  }
 }
