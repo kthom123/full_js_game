@@ -73,9 +73,11 @@ export class Player {
         enemy.y + enemy.height > this.y
       ){
         enemy.markedForDeletion = true;
-        this.game.score++;
-      } else {
-        //no collision
+        if (this.currentState === this.states[4] || this.currentState === this.states[5]){
+          this.game.score++;
+        } else {
+          this.setState(6, 0);
+        }
       }
     });
   }
