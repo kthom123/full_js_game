@@ -54,7 +54,7 @@ export class Running extends State {
     } else if (input.includes('Enter')){
       this.game.player.setState(states.ROLLING, 2);
     }
-  }
+  } // paused at 8:54:13
 }
 
 export class Jumping extends State {
