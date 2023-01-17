@@ -54,7 +54,7 @@ export class Running extends State {
     } else if (input.includes('Enter')){
       this.game.player.setState(states.ROLLING, 2);
     }
-  } // paused at 8:54:13
+  }
 }
 
 export class Jumping extends State {
@@ -72,6 +72,8 @@ export class Jumping extends State {
       this.game.player.setState(states.FALLING, 1);
     } else if (input.includes('Enter')){
       this.game.player.setState(states.ROLLING, 2);
+    } else if (input.includes('ArrowDown')){
+        this.game.player.setState(states.DIVING, 0);
     }
   }
 }
@@ -88,6 +90,8 @@ export class Falling extends State {
   handleInput(input){
     if (this.game.player.onGround()){
       this.game.player.setState(states.RUNNING, 1);
+    } else if (input.includes('ArrowDown')){
+      this.game.player.setState(states.DIVING, 0);
     }
   }
 }
@@ -111,6 +115,8 @@ export class Rolling extends State {
     } else if (input.includes('Enter') && input.includes('ArrowUp') &&
     this.game.player.onGround()) {
       this.game.player.vy -= 27;
+    } else if (input.includes('ArrowDown')){
+      this.game.player.setState(states.DIVING, 0);
     }
   }
 }
@@ -129,8 +135,8 @@ export class Diving extends State {
       * 0.5, this.game.player.y + this.game.player.height * 0.5));
     if (this.game.player.onGround()){
         this.game.player.setState(states.RUNNING, 1);
-    } else if (input.inludes('Enter') && this.game.player.onGround()){
+    } else if (input.includes('Enter') && this.game.player.onGround()){
       this.game.player.setState(states.ROLLING, 2);
     }
-  }
+  } // paused at 9:05:11
 }
