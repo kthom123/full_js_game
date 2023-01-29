@@ -23,6 +23,7 @@ export class Player {
     this.states = [new Sitting(this.game), new Running(this.game), new Jumping(this.game),
       new Falling(this.game), new Rolling(this.game), new Diving(this.game),
       new Hit(this.game)];
+      this.currentState = null;
   }
   update(input, deltaTime){
     this.checkCollision()
@@ -83,7 +84,7 @@ export class Player {
         ){
           this.game.score++;
           this.game.floatingMessages.push(new FloatingMessage('+1', enemy.x, enemy.y,
-          0, 0));
+          100, 50));
         } else {
           this.setState(6, 0);
           this.game.lives--;
