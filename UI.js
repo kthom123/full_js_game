@@ -10,5 +10,7 @@ export class UI {
     context.fillStyle = this.game.fontColor;
     //score
     context.fillText('Score: ' + this.game.score, 20, 50);
+    //timer
+    context.font = this.fontSize * 0.8 + ' px' + this.fontFamily;
   }
 }
