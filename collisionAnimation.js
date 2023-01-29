@@ -22,7 +22,13 @@ export class CollisionAnimation {
   }
   update(deltaTime){
     this.x -= this.game.speed;
-    this.frameX++;
+    if (this.frameTimer > this.frameInterval){
+      this.frameX++;
+      this.frameTimer = 0;
+    } else {
+      this.frameTimer += deltaTime;
+    }
+
     if (this.frameX > this.maxFrame) this.markedForDeletion = true;
   }
 }
