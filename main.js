@@ -73,7 +73,7 @@ window.addEventListener('load', function(){
           collision.draw(context);
         });
         this.UI.draw(context);
-    } // paused at 9:16:42 ------------------------------------
+    }
     addEnemy(){
       if (this.speed > 0 && Math.random() < 0.5) this.enemies.push(new GroundEnemy(this));
       else if (this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
