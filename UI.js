@@ -39,6 +39,12 @@ export class UI {
         context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
         context.fillText('Nope. Better luck next time!', this.game.width
         * 0.5, this.game.height * 0.5 + 20);
+        let btn = document.createElement("button");
+        btn.innerHTML = "Try Again";
+        btn.onclick = function () {
+          document.location.reload(true);
+        };
+        document.body.appendChild(btn);
       }
     }
     context.restore();
